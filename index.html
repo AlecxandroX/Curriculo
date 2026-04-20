@@ -3,188 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Currículo</title>
-    <!-- Adicione os links para o Bootstrap CSS e JavaScript aqui -->
+    <title>Currículo - Alecxandro Xavier Jaques</title>
+    <!-- Bootstrap 4.5.2 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #6c757d;
+            --accent-color: #d9f2ff;
+            --text-dark: #333;
+            --text-muted: #666;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
         .container {
             background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            transition: box-shadow 0.3s ease-in-out;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
 
-        .container:hover {
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        h2 {
-            color: #555;
-        }
-
-        h3 {
-            color: #888;
-        }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-        }
-
-        a:hover {
-            color: #0056b3;
-        }
-
-        .summary {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .experience,
-        .education {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .experience:hover,
-        .education:hover {
-            background-color: #d9f2ff;
-            transform: scale(1.02); /* Animação de aumento de tamanho ao passar o mouse */
-        }
-
-        .experience:not(:first-child) {
-            margin-top: 30px; /* Espaçamento entre as experiências */
+        .header-section {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .profile-picture {
-            max-width: 150px;
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
             border-radius: 50%;
-            transition: transform 0.3s ease-in-out;
+            border: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
         }
 
         .profile-picture:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .experience-item, .education-item {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            background-color: var(--accent-color);
+            border-left: 3px solid var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .period {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .skills-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .skills-badge:hover {
+            background-color: #003d7a;
+        }
+
+        .contact-info i {
+            width: 25px;
+            color: var(--primary-color);
+        }
+
+        hr {
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .profile-picture {
+                margin-bottom: 20px;
+            }
+            .text-right-md {
+                text-align: left !important;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="./Minhafoto.jpg" alt="Sua Foto" class="profile-picture">
-                <!-- Adicione sua foto com o atributo src -->
-                <div class="mt-3">
-                </div>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="row header-section align-items-center">
+            <div class="col-md-3 text-center">
+                <img src="./Minhafoto.jpg" alt="Foto de Alecxandro" class="profile-picture shadow">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <h1>Alecxandro Xavier Jaques</h1>
-                <p>Olá, eu sou Alecxandro, entusiasta de tecnologia e áreas correlatas. Tenho um forte compromisso e dedicação aos meus projetos, trabalho bem em equipe, tenho facilidade de aprendizado e também sou habilidoso em comunicação pública.</p>
-                <p>E-mail: alecxxavier8@gmail.com</p>
-                <p>Telefone: (49) 998220444</p>
-            </div>
-        </div>
-        <hr>
-        <div class="experience">
-            <h2 class="text-primary">Experiência Profissional</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>GGnet Telecomunicações</h3>
-                    <p>Cargo: Suporte Técnico NOC Nível 3</p>
-                    <p>Período: Fevereiro de 2022 - 2023</p>
-                    <p>Descrição: Suporte ao cliente da rede Gpon, configuração de equipamentos de rede como roteadores, routerboards, ONUs, etc.</p>
-                </div>
-            </div>
-        </div>
-         <div class="experience">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>GGnet Telecomunicações</h3>
-                    <p>Cargo: Sucesso do cliente</p>
-                    <p>Período: Fevereiro de 2023 - Presente</p>
-                    <p>Descrição: Atendimento ao cliente reincidente de suporte, diagnostico de dificuldades na rede que causem problemas reincidentes de conexão, tratativas com o cliente em geral.</p>
-                </div>
-            </div>
-        </div>
-           <div class="experience">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>GGnet Telecomunicações</h3>
-                    <p>Cargo: Analista de redes de telefonia</p>
-                    <p>Período: julho de 2024 - Presente</p>
-                    <p>Descrição: Atendimento ao cliente, atendimento a empresas com central telefonica, configuração de ramais PABX, soluções em linhas Fixas voip, uso de das ferramentas Sip Pulse, HPBXNG e Issabel.</p>
-                </div>
-            </div>
-        </div>
-        <div class="experience">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Cetesc Cursos Profissionalizantes</h3>
-                    <p>Cargo: Instrutor de informática básica</p>
-                    <p>Período: Agosto de 2022 - Presente</p>
-                    <p>Instrução em informática básica para adultos e crianças, Windows, internet, recursos especiais e pacote office, introdução a programação</p>
-                </div>
-            </div>
-        </div>
-        <div class="experience">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Indústria de Móveis 3 Irmãos</h3>
-                    <p>Cargo: Facilitador de produção</p>
-                    <p>Período: Agosto de 2019 - 2021</p>
-                    <p>Organização da linha de produção, ordens de serviço, metas de produção e gestão de pessoas</p>
+                <p class="lead text-muted">Analista de Suporte & Especialista em Telecomunicações</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:alecxxavier8@gmail.com">alecxxavier8@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> (49) 99822-0444</p>
                 </div>
             </div>
         </div>
 
-        <hr>
-        
-        <div class="education">
-            <h2 class="text-success">Formação</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>UNOPAR</h3>
-                    <p>Curso: Graduação em Redes de Computadores</p>
-                    <p>Período: 2023 - 2025</p>
-                    <p>Descrição: Criação de redes de computadores, programação, infraestrutura de rede</p>
+        <!-- Resumo Profissional -->
+        <div class="row">
+            <div class="col-12">
+                <h2><i class="fas fa-user-tie mr-2"></i>Sobre Mim</h2>
+                <p>Entusiasta de tecnologia com sólida experiência em suporte técnico, redes e telecomunicações. Comprometido com a excelência nos projetos, facilidade em trabalhar em equipe e rápido aprendizado. Habilidoso em comunicação e resolução de problemas complexos.</p>
+            </div>
+        </div>
+
+        <!-- Conhecimentos Técnicos -->
+        <div class="row">
+            <div class="col-12">
+                <h2><i class="fas fa-tools mr-2"></i>Conhecimentos Técnicos</h2>
+                <div class="d-flex flex-wrap">
+                    <span class="skills-badge">HTML</span>
+                    <span class="skills-badge">CSS</span>
+                    <span class="skills-badge">Bootstrap</span>
+                    <span class="skills-badge">JavaScript</span>
+                    <span class="skills-badge">PHP</span>
+                    <span class="skills-badge">SQL</span>
+                    <span class="skills-badge">Redes GPON</span>
+                    <span class="skills-badge">MikroTik</span>
+                    <span class="skills-badge">PABX & VoIP</span>
+                    <span class="skills-badge">Active Directory</span>
+                    <span class="skills-badge">Microsoft 365</span>
+                    <span class="skills-badge">RFID</span>
                 </div>
             </div>
         </div>
-        <div class="education">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Uninter</h3>
-                    <p>Curso: Informática Básica</p>
-                    <p>Período: 2008 - 2009</p>
-                    <p>Pacote Office e instruções sobre o básico da informática</p>
+
+        <!-- Experiência Profissional -->
+        <div class="row">
+            <div class="col-12">
+                <h2><i class="fas fa-briefcase mr-2"></i>Experiência Profissional</h2>
+                
+                <!-- Nova Experiência: Guararapes -->
+                <div class="experience-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>Guararapes</h3>
+                        <span class="period">02/01/2026 - Presente</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Analista de Suporte</p>
+                    <p class="mb-0 text-muted">
+                        Atuação em Service Desk, configuração e formatação de computadores, gerenciamento de Active Directory, administração de Pacote Microsoft 365 e suporte a sistemas RFID.
+                    </p>
+                </div>
+
+                <!-- Experiência Atualizada: GGnet Telefonia -->
+                <div class="experience-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>GGnet Telecomunicações</h3>
+                        <span class="period">Julho de 2024 - Presente</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Analista de Redes de Telefonia (Sem comprovação em carteira)</p>
+                    <p class="mb-0 text-muted">
+                        Configuração de PABX, equipamentos Alígera, MikroTik, ATAs de telefonia em geral e telefones IP. Atendimento especializado a empresas com central telefônica, soluções em linhas fixas VoIP e uso das ferramentas Sip Pulse, HPBXNG e Issabel.
+                    </p>
+                </div>
+
+                <!-- GGnet: Sucesso do Cliente -->
+                <div class="experience-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>GGnet Telecomunicações</h3>
+                        <span class="period">Fevereiro de 2023 - Junho de 2024</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Sucesso do Cliente</p>
+                    <p class="mb-0 text-muted">
+                        Atendimento a clientes reincidentes, diagnóstico de dificuldades na rede, tratativas estratégicas para melhoria da conexão e fidelização.
+                    </p>
+                </div>
+
+                <!-- GGnet: NOC Nível 3 -->
+                <div class="experience-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>GGnet Telecomunicações</h3>
+                        <span class="period">Fevereiro de 2022 - Janeiro de 2023</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Suporte Técnico NOC Nível 3</p>
+                    <p class="mb-0 text-muted">
+                        Suporte avançado à rede GPON, configuração de roteadores, RouterBoards (MikroTik), ONUs e infraestrutura de rede.
+                    </p>
+                </div>
+
+                <!-- Cetesc -->
+                <div class="experience-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>Cetesc Cursos Profissionalizantes</h3>
+                        <span class="period">Agosto de 2022 - Presente</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Instrutor de Informática Básica</p>
+                    <p class="mb-0 text-muted">
+                        Ensino de Windows, Internet, Pacote Office e introdução à programação para diversos públicos.
+                    </p>
+                </div>
+
+                <!-- Indústria de Móveis 3 Irmãos -->
+                <div class="experience-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>Indústria de Móveis 3 Irmãos</h3>
+                        <span class="period">Agosto de 2019 - 2021</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Facilitador de Produção</p>
+                    <p class="mb-0 text-muted">
+                        Gestão de pessoas, organização de linhas de produção, controle de ordens de serviço e metas.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="education">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Uninter</h3>
-                    <p>Curso: Designer Gráfico</p>
-                    <p>Período: 2009 - 2010</p>
-                    <p>Instruções sobre a utilização de Adobe Photoshop e CorelDRAW</p>
+
+        <!-- Formação Acadêmica -->
+        <div class="row">
+            <div class="col-12">
+                <h2><i class="fas fa-graduation-cap mr-2"></i>Formação Acadêmica</h2>
+                
+                <div class="education-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>UNOPAR</h3>
+                        <span class="period">2023 - 2025</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Graduação em Redes de Computadores</p>
+                    <p class="mb-0 text-muted">Foco em infraestrutura, segurança e programação de redes.</p>
+                </div>
+
+                <div class="education-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>Uninter</h3>
+                        <span class="period">2009 - 2010</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Design Gráfico</p>
+                    <p class="mb-0 text-muted">Domínio de ferramentas Adobe Photoshop e CorelDRAW.</p>
+                </div>
+
+                <div class="education-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3>Uninter</h3>
+                        <span class="period">2008 - 2009</span>
+                    </div>
+                    <p class="font-weight-bold mb-1">Informática Básica</p>
+                    <p class="mb-0 text-muted">Fundamentos de computação e Pacote Office.</p>
                 </div>
             </div>
         </div>
-    
-    <!-- links para o Bootstrap JS e jQuery aqui -->
+    </div>
+
+    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
